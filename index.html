@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdibasid's Futuristic Portfolio</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/107/107831.png" type="image/png" />
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css" />
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0a0a0a, #000);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+    nav {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-shadow: 0 0 10px #0ff;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #00f6ff;
+      text-shadow: 0 0 10px #00f6ff;
+    }
+    .typewriter {
+      font-family: monospace;
+      font-size: 1.25rem;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .flying-car {
+      position: absolute;
+      top: 50px;
+      left: -100px;
+      width: 100px;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section h2 {
+      color: #0ff;
+      border-bottom: 2px solid #0ff;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    #dev-mode {
+      display: none;
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      border: 2px dashed #0ff;
+      margin: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  
+  <header>
+    <h1>Abdibasid Ahmed</h1>
+    <div class="typewriter">Coder. Footballer. Chessmaster. Quran Keeper. 💪 🇸🇴</div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Abdibasid — a multilingual beast who speaks Somali, Arabic, Amharic, and English fluently. I hit the gym 🏋️‍♂️, master chess like a grandmaster ♟️, and I know the Quran & Diin deeply 📖🕌. This portfolio? Just a lil gift for someone special 😉</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>PHP, JavaScript, HTML, CSS</li>
+      <li>React (soon 😉), Bootstrap, jQuery</li>
+      <li>Creative Design, Motion Animation, Tailwind</li>
+      <li>Quran Knowledge, Strong Faith 💙</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Working on animated portfolios, futuristic websites, and custom designs full of flying cars, footballs, and Somali pride. More coming soon 🚀</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: abdibasidahmedwali@gmail.com</p>
+    <p>Instagram: @abdi_basid12</p>
+    <p>Facebook: abdibasid ahmed</p>
+  </section>
+
+  <div id="dev-mode">
+    <h2>👨‍💻 Secret Dev Mode Activated!</h2>
+    <p>You found the Konami Code! Here's your hidden message: Keep coding like a beast 🔥</p>
+  </div>
+  
+  <footer>
+    Crafted with 💙 and late-night vibes — abdibasidahmedwali@gmail.com
+  </footer>
+
+  <script>
+    // Animate flying car using JS
+    const car = document.getElementById("car");
+    function animateCar() {
+      car.style.left = "-100px";
+      let position = -100;
+      function move() {
+        position += 2;
+        car.style.left = position + "px";
+        if (position < window.innerWidth + 100) {
+          requestAnimationFrame(move);
+        } else {
+          setTimeout(animateCar, 1000);
+        }
+      }
+      move();
+    }
+    animateCar();
+
+    // Konami Code Easter Egg
+    const secretCode = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+    let userInput = [];
+
+    window.addEventListener("keydown", (e) => {
+      userInput.push(e.key);
+      userInput.splice(-secretCode.length - 1, userInput.length - secretCode.length);
+
+      if (userInput.join("") === secretCode.join("")) {
+        document.getElementById("dev-mode").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
